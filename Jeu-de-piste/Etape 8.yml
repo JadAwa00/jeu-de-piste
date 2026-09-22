@@ -1,0 +1,28 @@
+info:
+  name: Etape 8
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://172.16.3.254:8001/etape9
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: api-key
+      value: FenelonBTSSIO
+    - name: User-Agent
+      value: FenelonBTSSIO-UserAgent-LaRochelle-v1.0
+  body:
+    type: json
+    data: |-
+      {
+        "name":"Donald Duck"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

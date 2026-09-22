@@ -1,0 +1,20 @@
+info:
+  name: Etape 5
+  type: http
+  seq: 1
+
+http:
+  method: PUT
+  url: http://172.16.3.254:8001/put-method-6
+  headers:
+    - name: Content-Type
+      value: text/html
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

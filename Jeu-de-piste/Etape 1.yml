@@ -1,0 +1,19 @@
+info:
+  name: Etape 1
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: http://172.16.3.254:8001/decouverte-des-parametres?nom=Awaiye
+  params:
+    - name: nom
+      value: Awaiye
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

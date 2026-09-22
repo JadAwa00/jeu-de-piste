@@ -1,0 +1,15 @@
+info:
+  name: Etape 3
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://172.16.3.254:8001/un-peu-de-post
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

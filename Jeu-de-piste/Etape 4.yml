@@ -1,0 +1,18 @@
+info:
+  name: Etape 4
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://172.16.3.254:8001/5-content-type
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

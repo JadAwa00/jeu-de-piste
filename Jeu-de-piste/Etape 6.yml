@@ -1,0 +1,19 @@
+info:
+  name: Etape 6
+  type: http
+  seq: 1
+
+http:
+  method: DELETE
+  url: http://172.16.3.254:8001/et-oui-delete?filename=filename
+  params:
+    - name: filename
+      value: filename
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

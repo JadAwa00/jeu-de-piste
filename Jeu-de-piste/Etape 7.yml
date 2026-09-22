@@ -1,0 +1,25 @@
+info:
+  name: Etape 7
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: http://172.16.3.254:8001/etape8/api/users/12345
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "role":"Developer",
+        "email":"jagh@gmail.com"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
