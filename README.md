@@ -1,66 +1,128 @@
-# TP 01 
-## Jeu de piste
+# TP 01 — Jeu de piste HTTP
 
-{
-  "etape": "Etape 1: Introduction",
-  "message": "Bienvenue dans le jeu de piste HTTP !",
-  "cours": "Le protocole HTTP (Hypertext Transfer Protocol) est utilisé pour la communication sur le web. Il est indispensable de maitriser ce protocole pour appréhender le développement web. 📖 https://www.it-connect.fr/le-protocole-http-pour-les-debutants/",
-  "next_step": "Pour passer à l'étape suivante, faites une requête GET à l'URL \"/decouverte-des-parametres\" avec un paramètre \"nom\" dans l'URL, par exemple: /decouverte-des-parametres?nom=VotreNom. Attention, le paramètre \"nom\" est obligatoire pour réussir l'étape suivante.",
-  "tips": "https://developer.mozilla.org/fr/docs/Web/HTTP/Reference/Methods/GET"
-}
+Ce dépôt documente la résolution du jeu de piste sur les protocoles et requêtes HTTP réalisé avec le client d'API **Bruno**.
 
-{
-  "etape": "Etape 2: Paramètres dans l'URL",
-  "message": "Bravo Awaiye! Vous avez réussi la première étape. Maintenant, explorons l'utilisation des paramètres dans l'URL.",
-  "cours": "Les paramètres dans l'URL permettent de transmettre des informations à travers les requêtes HTTP. Vous pouvez les utiliser pour personnaliser vos requêtes.",
-  "success": "✅✅✅ Le paramètre \"nom\" est présent dans l'URL. Vous pouvez passer à l'étape suivante. ✅✅✅",
-  "next_step": "Pour passer à l'étape suivante, vous devez faire une requête GET à l'URL \"/plusieurs-parametres\" avec un paramètre \"prenom\" dans l'URL et un paramètre \"age\".Cela vous permettra de comprendre comment les paramètres dans l'URL fonctionnent pour personnaliser vos requêtes HTTP. N'oubliez pas que les paramètres dans l'URL sont souvent utilisés pour filtrer ou personnaliser les données que vous récupérez du serveur. En utilisant ces paramètres, vous pourrez mieux comprendre comment interagir avec les API RESTful et les serveurs web. Pour plus d'informations sur les paramètres dans l'URL, vous pouvez consulter la documentation officielle de MDN : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"
-}
+---
 
-{
-  "etape": "Méthodes HTTP - GET",
-  "message": "La deuxième étape est réussie ! Maintenant, explorons l'utilisation de la méthode GET pour faire des requêtes HTTP.",
-  "cours": "La méthode GET est utilisée pour récupérer des données à partir du serveur. Elle est souvent utilisée pour les requêtes de lecture.",
-  "success": "✅✅✅ Vous avez utilisé la méthode GET avec les bons paramètres. Vous pouvez passer à l'étape suivante. ✅✅✅",
-  "next_step": "Pour passer à l'étape suivante, vous devez faire une requête POST à l'URL \"/un-peu-de-post\"   Cela vous permettra de comprendre comment les différentes méthodes HTTP fonctionnent pour interagir avec les serveurs web. N'oubliez pas que la méthode GET est souvent utilisée pour récupérer des données du serveur, tandis que la méthode POST est utilisée pour envoyer des données au serveur. En utilisant ces méthodes avec les bons paramètres, vous pourrez mieux comprendre comment interagir avec les API RESTful et les serveurs web. Pour plus d'informations sur les méthodes HTTP et les paramètres dans l'URL, vous pouvez consulter la documentation officielle de MDN : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"
-}
+## Sommaire
+- [Étape 0 — Introduction au protocole](#étape-0--introduction-au-protocole)
+- [Étape 1 — Paramètre simple dans l'URL](#étape-1--paramètre-simple-dans-lurl)
+- [Étape 2 — Multiples paramètres d'URL (Query Params)](#étape-2--multiples-paramètres-durl-query-params)
+- [Étape 3 — Découverte de la méthode POST](#étape-3--découverte-de-la-méthode-post)
+- [Étape 4 — En-tête Content-Type](#étape-4--en-tête-content-type)
+- [Étape 5 — Méthode PUT et négociation de contenu (Accept)](#étape-5--méthode-put-et-négociation-de-contenu-accept)
+- [Étape 6 — Méthode DELETE et paramètres](#étape-6--méthode-delete-et-paramètres)
+- [Étape 7 — Méthode PATCH et transmission d'un Body JSON](#étape-7--méthode-patch-et-transmission-dun-body-json)
+- [Étape 8 — Finalisation : En-têtes personnalisés et Authentification](#étape-8--finalisation--en-têtes-personnalisés-et-authentification)
 
-{
-  "etape": "Méthodes HTTP - POST",
-  "message": "La troisième étape est réussie ! Maintenant, explorons l'utilisation de la méthode POST pour faire des requêtes HTTP.",
-  "cours": "La méthode POST est utilisée pour envoyer des données au serveur, souvent utilisée pour les requêtes de création.",
-  "success": "✅✅✅ Vous avez utilisé la méthode POST. Vous pouvez passer à l'étape suivante. ✅✅✅",
-  "next_step": "Pour passer à l'étape suivante, vous devez spécifier un type de contenu \"application/json\" dans votre requête POST à l'URL \"/5-content-type\"  Cela vous permettra de comprendre comment les en-têtes HTTP fonctionnent pour spécifier le format des données envoyées au serveur. N'oubliez pas que la méthode POST est souvent utilisée pour créer de nouvelles ressources sur le serveur, tandis que la méthode PUT est utilisée pour mettre à jour des ressources existantes. En utilisant ces méthodes avec les bons types de contenu, vous pourrez mieux comprendre comment interagir avec les API RESTful et les serveurs web. Pour plus d'informations sur les méthodes HTTP et les types de contenu, vous pouvez consulter la documentation officielle de MDN : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
-}
+---
 
-{
-  "etape": "Type de contenu - POST",
-  "message": "Vous devez spécifier le type de contenu \"application/json\".",
-  "cours": "Le type de contenu indique au serveur le format des données que vous attendez en réponse. Dans une requête POST, cela peut souvent être \"application/json\" ou \"text/html\".",
-  "success": "✅✅✅ Vous avez spécifié le bon type de contenu. Vous pouvez passer à l'étape suivante. ✅✅✅",
-  "next_step": "Pour passer à l'étape suivante, vous devez faire une requête PUT à l'URL \"/put-method-6\" en incluant un en-tête \"Content-Type\" de type \"text/html\" et un en-tête \"Accept\" de type \"application/json\". Cela vous permettra de comprendre comment les en-têtes \"Content-Type\" et \"Accept\" fonctionnent ensemble pour spécifier le format des données envoyées et reçues. N'oubliez pas que la méthode PUT est souvent utilisée pour mettre à jour des ressources sur le serveur, tandis que la méthode POST est utilisée pour créer de nouvelles ressources. En utilisant ces méthodes avec les bons types de contenu, vous pourrez mieux comprendre comment interagir avec les API RESTful et les serveurs web. Pour plus d'informations sur les méthodes HTTP et les types de contenu, vous pouvez consulter la documentation officielle de MDN : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT"
-}
+### Étape 0 — Introduction au protocole
 
-{
-  "etape": "Types de contenu - PUT",
-  "message": "Vous avez spécifié le type de contenu text/html dans votre requête. https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods/PUT",
-  "cours": "Lors de l'envoi de données avec la méthode PUT, vous devez indiquer au serveur le format des données que vous envoyez. Cela est souvent spécifié avec l'en-tête \"Content-Type\".",
-  "success": "✅✅✅ Vous avez spécifié le bon type de contenu et le bon en-tête Accept. Vous pouvez passer à l'étape suivante. ✅✅✅",
-  "next_step": "Pour passer à l'étape suivante, vous devez faire une requête DELETE à l'URL \"/et-oui-delete\" en incluant le paramètre \"filename\" dans l'URL. Cela vous permettra de comprendre comment les paramètres dans l'URL fonctionnent avec la méthode GET pour personnaliser vos requêtes. N'oubliez pas que la méthode GET est souvent utilisée pour récupérer des données du serveur, tandis que la méthode PUT est utilisée pour mettre à jour des ressources sur le serveur. En utilisant ces méthodes avec les bons types de contenu et les bons paramètres, vous pourrez mieux comprendre comment interagir avec les API RESTful et les serveurs web. Pour plus d'informations sur les méthodes HTTP et les types de contenu, vous pouvez consulter la documentation officielle de MDN : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE"
-}
+* **Méthode :** `GET`
+* **URL :** `http://172.16.3.254:8001/bienvenue`
+* **Objectif :** Initialisation du jeu de piste et récupération des consignes pour la première étape.
 
-{
-  "etape": "Paramètres dans l'URL et méthode - DELETE",
-  "message": "Vous avez utilisé la méthode DELETE avec les paramètres {\"filename\":\"filename\"}.",
-  "cours": "Combiner la méthode DELETE avec des paramètres dans l'URL vous permet de personnaliser davantage vos requêtes. Dans cette étape, vous avez utilisé les deux ensemble.",
-  "success": "✅✅✅ Vous avez utilisé la bonne méthode et les bons paramètres. Vous pouvez passer à l'étape suivante. ✅✅✅",
-  "next_step": "Pour passer à l'étape suivante, vous devez faire une requête PATCH à l'URL \"/etape8/api/users/12345\" en incluant un en-tête \"Content-Type\" de type \"application/json\". Cela vous permettra de comprendre comment les en-têtes \"Accept\" fonctionnent pour spécifier le format des données que vous attendez en réponse. N'oubliez pas que la méthode GET est souvent utilisée pour récupérer des données du serveur, tandis que la méthode DELETE est utilisée pour supprimer des ressources sur le serveur. En utilisant ces méthodes avec les bons types de contenu et les bons paramètres, vous pourrez mieux comprendre comment interagir avec les API RESTful et les serveurs web. Pour plus d'informations sur les méthodes HTTP et les types de contenu, vous pouvez consulter la documentation officielle de MDN : https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET"
-}
+![Capture Étape 0](<Etape 0.png>)
 
-{
-  "etape": "Méthode et type de contenu - PATCH",
-  "message": "Vous avez utilisé la méthode PATCH avec le type de contenu application/json.",
-  "cours": "Cette étape combine la méthode PATCH avec la spécification du type de contenu. Cela est souvent nécessaire lors de l'envoi de données au serveur.",
-  "success": "✅✅✅ Vous avez utilisé la bonne méthode et le bon type de contenu. Vous pouvez passer à l'étape suivante. ✅✅✅Le contenu attendu dans le body correspond à la demande, bravo!",
-  "next_step": "Pour passer à l'étape suivante, vous devez faire une requête POST à l'URL \"/etape9\" en incluant un en-tête \"Content-Type\" de type \"application/json\", en fournissant la clé api dans le header: api-key: FenelonBTSSIO et en spécifiant un User-Agent: FenelonBTSSIO-UserAgent-LaRochelle-v1.0 Dans le body, vous devez fournir un json contenant un champ \"name\" qui doit contenir \"Donald Duck\". Bonne chance!"
-}
+---
+
+### Étape 1 — Paramètre simple dans l'URL
+
+* **Méthode :** `GET`
+* **URL :** `http://172.16.3.254:8001/decouverte-des-parametres?nom=Awaiye`
+* **Paramètres (Query Params) :**
+  * `nom` : `Awaiye`
+
+![Capture Étape 1](<Etape 1.png>)
+
+---
+
+### Étape 2 — Multiples paramètres d'URL (Query Params)
+
+* **Méthode :** `GET`
+* **URL :** `http://172.16.3.254:8001/plusieurs-parametres?nom=Awaiye&prenom=Jad&age=19`
+* **Paramètres (Query Params) :**
+  * `nom` : `Awaiye`
+  * `prenom` : `Jad`
+  * `age` : `19`
+
+![Capture Étape 2](<Etape 2.png>)
+---
+
+### Étape 3 — Découverte de la méthode POST
+
+* **Méthode :** `POST`
+* **URL :** `http://172.16.3.254:8001/un-peu-de-post`
+* **Objectif :** Utiliser la méthode `POST` pour initier l'envoi de données vers le serveur.
+
+![Capture Étape 3](<Etape 3.png>)
+
+---
+
+### Étape 4 — En-tête Content-Type
+
+* **Méthode :** `POST`
+* **URL :** `http://172.16.3.254:8001/5-content-type`
+* **En-têtes (Headers) :**
+  * `Content-Type` : `application/json`
+
+![Capture Étape 4](<Etape 4.png>)
+
+---
+
+### Étape 5 — Méthode PUT et négociation de contenu (Accept)
+
+* **Méthode :** `PUT`
+* **URL :** `http://172.16.3.254:8001/put-method-6`
+* **En-têtes (Headers) :**
+  * `Content-Type` : `text/html`
+  * `Accept` : `application/json`
+
+![Capture Étape 5](<Etape 5.png>)
+
+---
+
+### Étape 6 — Méthode DELETE et paramètres
+
+* **Méthode :** `DELETE`
+* **URL :** `http://172.16.3.254:8001/et-oui-delete?filename=filename`
+* **Paramètres (Query Params) :**
+  * `filename` : `filename`
+
+![Capture Étape 6](<Etape 6.png>)
+
+---
+
+### Étape 7 — Méthode PATCH et transmission d'un Body JSON
+
+* **Méthode :** `PATCH`
+* **URL :** `http://172.16.3.254:8001/etape8/api/users/12345`
+* **En-têtes (Headers) :**
+  * `Content-Type` : `application/json`
+* **Corps de la requête (JSON Body) :**
+  ```json
+  {
+    "role": "Developer",
+    "email": "jagh@gmail.com"
+  }
+
+![Capture Étape 7](<Etape 7.png>)
+
+---
+
+### Étape 8 — Finalisation : En-têtes personnalisés et Authentification
+
+* **Méthode :** `POST`
+* **URL :** `http://172.16.3.254:8001/etape9`
+* **En-têtes (Headers) :**
+  * `Content-Type` : `application/json`
+  * `api-key` : `FenelonBTSSIO`
+  * `User-Agent` : `FenelonBTSSIO-UserAgent-LaRochelle-v1.0`
+* **Corps de la requête (JSON Body) :**
+  ```json
+  {
+    "name": "Donald Duck"
+  }
+
+![Capture Étape 8](<Etape 8.png>)
